@@ -1,6 +1,8 @@
 tmp
 bin
 build
+dist
+libs
 *.zip
 .apt_generated
 build.properties.local

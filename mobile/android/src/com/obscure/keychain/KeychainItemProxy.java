@@ -25,7 +25,7 @@ public class KeychainItemProxy extends KrollProxy {
     // Constructor
     public KeychainItemProxy(TiContext tiContext) {
         super(tiContext);
-        androidContext = context.getAndroidContext();
+        androidContext = tiContext.getAndroidContext();
     }
 
     @Override
