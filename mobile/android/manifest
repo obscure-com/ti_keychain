@@ -2,17 +2,17 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.0
+version: 0.1
 apiversion: 2
-description: Keychain access module for iPhone
-author: Paul Mietz Egli
-license: Apache 2.0
-copyright: Copyright (c) 2011 Paul Mietz Egli
+description: My module
+author: Your Name
+license: Specify your license
+copyright: Copyright (c) 2012 by Your Company
 
 
 # these should not be edited
-name: keychain
+name: keychainmodule
 moduleid: com.obscure.keychain
-guid: eb0a9be8-02b5-43a2-a115-a220b293d202
+guid: cd79d0db-6c4a-432f-9c39-ef17cbee2da3
 platform: android
-minsdk: 1.8.0
+minsdk: 2.1.0.GA

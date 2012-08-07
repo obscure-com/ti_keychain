@@ -1,16 +1,16 @@
-# keychain Module
+# keychainmodule Module
 
 ## Description
 
 TODO: Enter your module description here
 
-## Accessing the keychain Module
+## Accessing the keychainmodule Module
 
 To access this module from JavaScript, you would do the following:
 
-	var keychain = require("com.obscure.keychain");
+	var keychainmodule = require("com.obscure.keychain");
 
-The keychain variable is a reference to the Module object.	
+The keychainmodule variable is a reference to the Module object.	
 
 ## Reference
 

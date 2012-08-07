@@ -62,5 +62,5 @@ window.open();
 var keychain = require('com.obscure.keychain');
 Ti.API.info("module is => " + keychain);
 
-var keychainItem = keychain.createKeychainItem('mylogin');
-Ti.API.info("account = " + keychainItem.account + "; password = " + keychainItem.valueData);
+ var keychainItem = keychain.createKeychainItem('mylogin');
+ Ti.API.info("account = " + keychainItem.account + "; password = " + keychainItem.valueData);
