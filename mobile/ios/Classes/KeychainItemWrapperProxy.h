@@ -11,7 +11,7 @@
 
 @interface KeychainItemWrapperProxy : TiProxy {
     @private
-    KeychainItemWrapper * keychainItem;
+    KCKeychainItemWrapper * keychainItem;
 }
 @property (nonatomic, retain) NSString * account;
 @property (nonatomic, retain) NSString * valueData;

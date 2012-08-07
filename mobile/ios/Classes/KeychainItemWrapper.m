@@ -73,7 +73,7 @@ See the header file Security/SecItem.h for more details.
 
 */
 
-@interface KeychainItemWrapper (PrivateMethods)
+@interface KCKeychainItemWrapper (PrivateMethods)
 /*
 The decision behind the following two methods (secItemFormatToDictionary and dictionaryToSecItemFormat) was
 to encapsulate the transition between what the detail view controller was expecting (NSString *) and what the
@@ -87,7 +87,7 @@ Keychain API expects as a validly constructed container class.
 
 @end
 
-@implementation KeychainItemWrapper
+@implementation KCKeychainItemWrapper
 
 @synthesize keychainItemData, genericPasswordQuery;
 

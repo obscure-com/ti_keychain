@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:identifier accessGroup:accessGroup];
+        keychainItem = [[KCKeychainItemWrapper alloc] initWithIdentifier:identifier accessGroup:accessGroup];
     }
     
     return self;

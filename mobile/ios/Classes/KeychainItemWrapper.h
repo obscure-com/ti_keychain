@@ -54,7 +54,7 @@
     simple wrapper to provide a distinct barrier between all the idiosyncracies involved with the Keychain
     CF/NS container objects.
 */
-@interface KeychainItemWrapper : NSObject
+@interface KCKeychainItemWrapper : NSObject
 {
     NSMutableDictionary *keychainItemData;		// The actual keychain item data backing store.
     NSMutableDictionary *genericPasswordQuery;	// A placeholder for the generic keychain item query used to locate the item.
