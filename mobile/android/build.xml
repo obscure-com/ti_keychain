@@ -1,6 +1,6 @@
-<project name="keychain" default="dist">
+<project name="keychainmodule" default="dist">
 	<description>
-		Ant build script for Titanium Android module keychain
+		Ant build script for Titanium Android module keychainmodule
 	</description>
 
 	<property name="ti.module.root" location="${basedir}"/>

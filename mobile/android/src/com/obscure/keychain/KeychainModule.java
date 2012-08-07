@@ -11,11 +11,12 @@ package com.obscure.keychain;
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 
+import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.titanium.TiContext;
-import org.appcelerator.titanium.util.Log;
-import org.appcelerator.titanium.util.TiConfig;
+import org.appcelerator.kroll.common.Log;
+import org.appcelerator.kroll.common.TiConfig;
 
-@Kroll.module(name="Keychain", id="com.obscure.keychain")
+@Kroll.module(name="Keychainmodule", id="com.obscure.keychain")
 public class KeychainModule extends KrollModule
 {
 
@@ -30,24 +31,11 @@ public class KeychainModule extends KrollModule
 		super(tiContext);
 	}
 
-	// Methods
-	@Kroll.method
-	public String example() {
-		Log.d(LCAT, "example called");
-		return "hello world";
-	}
-	
-	// Properties
-	@Kroll.getProperty
-	public String getExampleProp() {
-		Log.d(LCAT, "get example property");
-		return "hello world";
-	}
-	
-	
-	@Kroll.setProperty
-	public void setExampleProp(String value) {
-		Log.d(LCAT, "set example property: " + value);
+	@Kroll.onAppCreate
+	public static void onAppCreate(TiApplication app)
+	{
+		Log.d(LCAT, "inside onAppCreate");
+		// put module init code that needs to run when the application is created
 	}
 
 }
