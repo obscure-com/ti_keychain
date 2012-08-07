@@ -7,7 +7,9 @@
 // open a single window
 var window = Ti.UI.createWindow({
 	backgroundColor:'white',
+	layout: 'vertical'
 });
+
 var label = Ti.UI.createLabel({
   top: 20,
   height: 30,
@@ -19,42 +21,51 @@ window.add(label);
 
 var button1 = Ti.UI.createButton({
   title: 'set account',
-  top: 60,
+  top: 10,
   height: 30,
-  width: 100,
+  width: 200,
 });
 button1.addEventListener('click', function() {
   keychainItem.account = 'pegli';
-  Ti.API.info("new account = "+keychainItem.account);
   label.text = "new account = "+keychainItem.account;
 });
 window.add(button1);
 
 var button2 = Ti.UI.createButton({
   title: 'set password',
-  top: 100,
+  top: 10,
   height: 30,
-  width: 100,
+  width: 200,
 });
 button2.addEventListener('click', function() {
   keychainItem.valueData = 'supersecret';
-  Ti.API.info("new password = "+keychainItem.valueData);
   label.text = "new password = "+keychainItem.valueData;
 });
 window.add(button2);
 
 var button3 = Ti.UI.createButton({
   title: 'reset keychain item',
-  top: 140,
+  top: 10,
   height: 30,
-  width: 100,
+  width: 200,
 });
 button3.addEventListener('click', function() {
   keychainItem.reset();
-  Ti.API.info("reset item, account = "+keychainItem.account);
   label.text = "reset item, account = "+keychainItem.account;
 });
 window.add(button3);
+
+var button4 = Ti.UI.createButton({
+  title: 'get keychain item',
+  top: 10,
+  height: 30,
+  width: 200,
+});
+button4.addEventListener('click', function() {
+  label.text = "account = " + keychainItem.account + "; password = " + keychainItem.valueData;
+});
+window.add(button4);
+
 
 window.open();
 
@@ -62,5 +73,5 @@ window.open();
 var keychain = require('com.obscure.keychain');
 Ti.API.info("module is => " + keychain);
 
-var keychainItem = keychain.createKeychainItem('mylogin');
+var keychainItem = keychain.createKeychainItem('mylogin', 'supersecretpassphrase');
 Ti.API.info("account = " + keychainItem.account + "; password = " + keychainItem.valueData);
