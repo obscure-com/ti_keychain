@@ -15,4 +15,4 @@ name: keychain
 moduleid: com.obscure.keychain
 guid: eb0a9be8-02b5-43a2-a115-a220b293d202
 platform: android
-minsdk: 1.8.0
+minsdk: 2.1.0.GA

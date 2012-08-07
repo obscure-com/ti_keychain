@@ -6,3 +6,4 @@ libs
 *.zip
 .apt_generated
 build.properties.local
+.*
