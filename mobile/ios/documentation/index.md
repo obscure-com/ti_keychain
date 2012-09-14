@@ -2,38 +2,77 @@
 
 ## Description
 
-TODO: Enter your module description here
+The keychain module provides methods for securely storing sensitive data on
+iOS and Android.  See the [Keychain Services Programming Guide](http://bit.ly/MtQ2DJ)
+for background information about the Keychain on iOS.
 
-## Accessing the keychain Module
+The reference section follows these conventions:
+
+* Text in `code font` refer to module objects.  For example, keychain is a generic term
+  but `keychain` refers to a Keychain object.
+* The term "dictionary" is used to distinguish document properties objects from generic
+  JavaScript Object types.  Parameters and return values of "dictionary" type are Objects
+  with key-value pairs and no functions.
+* Object functions are listed with parentheses and properties without.  Constants are
+  implemented as read-only properties.
+  
+## Accessing the Module
 
 To access this module from JavaScript, you would do the following:
 
 	var keychain = require("com.obscure.keychain");
 
-The keychain variable is a reference to the Module object.	
 
-## Reference
+## Keychain module
 
-TODO: If your module has an API, you should document
-the reference here.
+### Properties
 
-### ___PROJECTNAMEASIDENTIFIER__.function
+### Functions
 
-TODO: This is an example of a module function.
+**createKeychainItem**(identifier, [accessGroup])
 
-### ___PROJECTNAMEASIDENTIFIER__.property
+Create or retrieve a keychain item.  If you want the new keychain item to be shared among
+multiple applications, provide a value for the `accessGroup` parameter.  This value must
+be set in each app's `keychain-access-groups` entitlement.  See the [Keychain Services
+Reference](http://bit.ly/MtQ2DJ) for details on access groups.
 
-TODO: This is an example of a module property.
+* identifier (string): the unique identifier of the keychain item to create or fetch.
+* accessGroup (string, optional): if provided, sets the access group for the item.
 
-## Usage
+## KeychainItem
 
-TODO: Enter your usage example here
+A `KeychainItem` object is returned by `createKeychainItem()` and holds the secure information
+that was read from or should be written to the keychain.  Changes to the properties are
+automatically written to the keychain.
 
-## Author
+### Properties
 
-TODO: Enter your author name, email and other contact
-details you want to share here. 
+**account**
 
-## License
+string, read/write.  The account name or username of the item.
 
-TODO: Enter your license/legal information here.
+**valueData**
+
+string, read/write.  The data associated with the keychain item, e.g. the password or other
+secured string.
+
+**description**
+
+string, read/write.  A user-visible string describing this item, e.g. "Google account password".
+
+**comment**
+
+string, read/write.  The user-editable comment for this item.
+
+### Functions
+
+**reset**()
+
+Clear all values and remove the item from the keychain.
+
+## Example
+
+    var keychain = require('com.obscure.keychain');
+    var keychainItem = keychain.createKeychainItem('mylogin');
+    keychainItem.account = 'paul@example.com';
+    keychainItem.valueData = 'correcthorsebatterystaple';
