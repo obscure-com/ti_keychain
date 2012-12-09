@@ -1,0 +1,7 @@
+.*
+build
+modules
+build.log
+tmp
+._*
+.DS_Store
