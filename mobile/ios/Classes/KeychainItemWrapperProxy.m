@@ -25,6 +25,14 @@
     [super dealloc];
 }
 
+- (NSString *)identifier {
+    return [keychainItem objectForKey:(id)kSecAttrGeneric];
+}
+
+- (NSString *)accessGroup {
+    return [keychainItem objectForKey:(id)kSecAttrAccessGroup];
+}
+
 - (NSString *)account {
     return [keychainItem objectForKey:(id)kSecAttrAccount];
 }
