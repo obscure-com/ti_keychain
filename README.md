@@ -23,7 +23,9 @@ Installation
    `Resources` folder) or your Titanium SDK installation directory.
 1. Edit `tiapp.xml` and add the following line to the `<modules>` section, using the version number 
    specified in the ZIP file name:
-    <module version="2.0">com.obscure.keychain</module>
+```
+<module version="2.0">com.obscure.keychain</module>
+```
 1. Clean and rebuild your project.
 
 Detailed instructions for installing modules can be found on the
