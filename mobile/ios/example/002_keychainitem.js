@@ -83,6 +83,7 @@ module.exports = function() {
     it('must fetch an existing keychain item by identifier', function() {
       // the 'test account' item was created in the before() function
       var item = module.createKeychainItem('test account');
+      should.exist(item);
       item.identifier.should.eql('test account');
       item.account.should.eql('paul');
       item.valueData.should.eql('supersecret');
