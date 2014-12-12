@@ -33,6 +33,15 @@ Installation
 Detailed instructions for installing modules can be found on the
 [Appcelerator documentation site](http://docs.appcelerator.com/titanium/latest/#!/guide/Using_a_Module).
 
+### Building
+#### Using Gradle
+Use *gradle both* to build ios and android using gradle.
+Use *gradle ios* or *gradle android* for device specific builds.
+#### Using Ant
+Use *ant* for both or *ant ios* or *ant android* for specific builds.
+Use *ant test* to run *titanium.py run --platform ios* command
+
+
 Usage Example
 -------------
 
