@@ -1,0 +1,17 @@
+<project name="ti_keychain" default="both">
+    <property environment="env"/>
+    <property file="build.properties" />
+    <target name="ios">
+        <exec dir="${basedir}/mobile/ios" executable="${titanium.build}" failonerror="true"/>
+        <move file="${module.ios.binary}" todir="mobile/ios/dist"/>
+    </target>
+    <target name="android">
+        <exec dir="${basedir}/mobile/android" executable="ant" failonerror="true"/>
+    </target>
+    <target name="test">
+        <exec dir="${basedir}/mobile/ios" executable="${titanium.py}" failonerror="true">
+            <arg line="run"/>
+        </exec>
+    </target>
+    <target name="both" depends="ios, android"/>
+</project>
