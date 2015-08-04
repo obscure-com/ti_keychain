@@ -101,5 +101,11 @@ module.exports = function() {
       refetch.comment.should.eql('');
       refetch.description.should.eql('');
     });
+    
+    it('must fetch a keychain item defined in another file (issue 13)', function() {
+      var item = module.createKeychainItem('deferred');
+      item.account.should.eql('deferred');
+      item.valueData.should.eql('password');
+    })
   });
 };
