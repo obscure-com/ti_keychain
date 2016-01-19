@@ -1,4 +1,4 @@
-version: 2.1
+version: 3.0
 architectures: armv7 arm64 i386 x86_64
 description: Keychain access module for iPhone
 author: Paul Mietz Egli
@@ -11,4 +11,4 @@ name: keychain
 moduleid: com.obscure.keychain
 guid: acf8434d-5290-4b73-8f39-e4cd7349860a
 platform: iphone
-minsdk: 3.5.0.Beta
+minsdk: 5.1.2.GA
