@@ -13,5 +13,11 @@ module.exports = function() {
     it('must have a createKeychainItem method', function() {
       should(module.createKeychainItem).be.a.Function;
     });
+    
+    it('must create a keychain item for later retrieval (issue 13)', function() {
+      var later = module.createKeychainItem('deferred');
+      later.account = 'deferred';
+      later.valueData = 'password';
+    })
   });
 };

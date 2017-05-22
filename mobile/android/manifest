@@ -3,7 +3,6 @@
 # during compilation, packaging, distribution, etc.
 #
 version: 2.1
-architectures: armeabi armeabi-v7a x86
 apiversion: 2
 description: Keychain access module for iPhone
 author: Paul Mietz Egli
@@ -16,4 +15,5 @@ name: keychain
 moduleid: com.obscure.keychain
 guid: eb0a9be8-02b5-43a2-a115-a220b293d202
 platform: android
-minsdk: 3.5.0.Beta
+minsdk: 3.5.0.GA
+architectures: armeabi armeabi-v7a x86
