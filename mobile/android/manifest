@@ -4,7 +4,7 @@
 #
 version: 3.0
 architectures: armeabi armeabi-v7a x86
-apiversion: 2
+apiversion: 3
 description: Keychain access module for iPhone
 author: Paul Mietz Egli
 license: Apache 2.0
