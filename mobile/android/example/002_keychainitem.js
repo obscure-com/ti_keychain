@@ -27,7 +27,6 @@ module.exports = function () {
 
         it('must create a keychainItem', function () {
             var item = module.createKeychainItem({ name: 'id1' });
-            console.log(JSON.stringify(stored_item));
             should.exist(item);
         });
 
