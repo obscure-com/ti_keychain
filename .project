@@ -5,9 +5,15 @@
 	<projects>
 	</projects>
 	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>com.aptana.projects.webnature</nature>
 		<nature>com.appcelerator.titanium.mobile.module.nature</nature>
+		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
 	</natures>
 </projectDescription>

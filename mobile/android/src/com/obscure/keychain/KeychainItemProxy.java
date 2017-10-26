@@ -1,13 +1,21 @@
 package com.obscure.keychain;
 
-import org.appcelerator.kroll.KrollModule;
+import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollProxy;
 import org.appcelerator.kroll.annotations.Kroll;
-import org.appcelerator.titanium.TiContext;
+import org.appcelerator.titanium.TiC;
+import org.appcelerator.titanium.TiApplication;
+import org.appcelerator.kroll.common.Log;
+import org.appcelerator.kroll.common.TiConfig;
+import org.appcelerator.titanium.util.TiConvert;
+import org.appcelerator.titanium.proxy.TiViewProxy;
+import org.appcelerator.titanium.view.TiCompositeLayout;
+import org.appcelerator.titanium.view.TiCompositeLayout.LayoutArrangement;
+import org.appcelerator.titanium.view.TiUIView;
 
 import android.content.ContextWrapper;
 import android.content.SharedPreferences;
-import android.util.Log;
+import android.app.Activity;
 
 // This proxy can be created by calling Keychain.createExample({message: "hello world"})
 @Kroll.proxy(creatableInModule = KeychainModule.class)
@@ -27,14 +35,19 @@ public class KeychainItemProxy extends KrollProxy {
 
     private DesEncryptor        encryptor;
 
+    private TiApplication       appContext;
+
+    private Activity            activity;
+
     private String              identifier;
 
     private SharedPreferences   sharedPrefs;
 
     // Constructor
-    public KeychainItemProxy(TiContext tiContext) {
-        super(tiContext);
-        androidContext = tiContext.getAndroidContext();
+    public KeychainItemProxy() {
+        super();
+        appContext = TiApplication.getInstance();
+        activity = appContext.getCurrentActivity();
     }
 
     private String fetchValueForKey(String key) {
@@ -75,26 +88,25 @@ public class KeychainItemProxy extends KrollProxy {
         return fetchValueForKey(VALUE_DATA_KEY);
     }
 
-    @Override
-    public void handleCreationArgs(KrollModule createdInModule, Object[] args) {
-        super.handleCreationArgs(createdInModule, args);
-        if (args != null) {
-
-            if (args.length > 0) {
-                this.identifier = (String) args[0];
-                String name = String.format("keychain.%s", this.identifier);
-                sharedPrefs = androidContext.getSharedPreferences(name, 0);
+    // Handle creation options
+	@Override
+	public void handleCreationDict(KrollDict options)
+	{
+        super.handleCreationDict(options);
+        Log.d(LCAT, "****** handleCreationDict","started");
+        try {
+            if (options.containsKey("name")) {
+                String name = String.format("keychain.%s",  options.get("name"));
+                sharedPrefs = activity.getSharedPreferences(name, 0);
             }
-            if (args.length > 1) {
-                try {
-                    encryptor = new DesEncryptor((String) args[1]);
-                }
-                catch (Exception e) {
-                    Log.d(LCAT, "error creating keystore", e);
-                }
+            if (options.containsKey("group")) {
+                encryptor = new DesEncryptor((String) options.get("group"));
             }
         }
-    }
+        catch (Exception e) {
+                Log.d(LCAT, "error creating keystore", e);
+            }
+	}
 
     @Kroll.method
     public void reset() {

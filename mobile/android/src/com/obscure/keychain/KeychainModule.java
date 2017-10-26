@@ -10,13 +10,19 @@ package com.obscure.keychain;
 
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
-import org.appcelerator.titanium.TiContext;
+
+import org.appcelerator.titanium.TiApplication;
+import org.appcelerator.kroll.common.Log;
+import org.appcelerator.kroll.common.TiConfig;
 
 @Kroll.module(name = "Keychain", id = "com.obscure.keychain")
 public class KeychainModule extends KrollModule {
 
-	public KeychainModule(TiContext tiContext) {
-		super(tiContext);
+// Standard Debugging variables
+	private static final String LCAT = "Keychain";
+	private static final boolean DBG = TiConfig.LOGD;
+	public KeychainModule() {
+		super();
 	}
 
 }
