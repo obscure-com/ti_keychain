@@ -1,6 +1,7 @@
 "/Users/paulryanwork/Documents/projects/ti_keychain/mobile/android/src/com/obscure/keychain/DesEncryptor.java"
 "/Users/paulryanwork/Documents/projects/ti_keychain/mobile/android/src/com/obscure/keychain/KeychainItemProxy.java"
 "/Users/paulryanwork/Documents/projects/ti_keychain/mobile/android/src/com/obscure/keychain/KeychainModule.java"
+"/Users/paulryanwork/Documents/projects/ti_keychain/mobile/android/build/generated/java/com/obscure/keychain/KeychainBootstrap.java"
 "/Users/paulryanwork/Documents/projects/ti_keychain/mobile/android/build/generated/r/android/support/compat/R.java"
 "/Users/paulryanwork/Documents/projects/ti_keychain/mobile/android/build/generated/r/android/support/design/R.java"
 "/Users/paulryanwork/Documents/projects/ti_keychain/mobile/android/build/generated/r/android/support/v7/appcompat/R.java"
